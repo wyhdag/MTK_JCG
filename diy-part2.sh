@@ -19,4 +19,3 @@ git clone https://github.com/wyhdag/dns -b v5 package/emortal/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 sed -i "27a\echo \"DISTRIB_DESCRIPTION=\'$(TZ=UTC-8 date "+%Y-%m-%d") By:WYH\'\" >> /etc/openwrt_release" package/emortal/default-settings/files/99-default-settings
 sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='$(date +%Y%m%d)-JCG-Q30Pro'/g"  package/base-files/files/etc/openwrt_release
-sed -i 's/$(VERSION_DIST_SANITIZED)-$(IMG_PREFIX_VERNUM)$(IMG_PREFIX_VERCODE)$(IMG_PREFIX_EXTRA)$(BOARD)$(if $(SUBTARGET),-$(SUBTARGET))/$(BOARD)$(if $(SUBTARGET),-$(SUBTARGET))/g' include/image.mk
