@@ -10,6 +10,12 @@
 # See /LICENSE for more information.
 #
 
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
+rm -rf feeds/packages/net/v2ray-geodata
+git clone https://github.com/wyhdag/dns -b v5 package/emortal/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+git clone https://github.com/derisamedia/luci-theme-alpha-alk-net.git package/emortal/luci-theme-alpha-alk
 sed -i 's/Os/O2/g' include/target.mk
 sed -i "27a\echo \"DISTRIB_DESCRIPTION=\'$(TZ=UTC-8 date "+%Y-%m-%d") By:WYH\'\" >> /etc/openwrt_release" package/emortal/default-settings/files/99-default-settings
 sed -i 's/$(VERSION_DIST_SANITIZED)-$(IMG_PREFIX_VERNUM)$(IMG_PREFIX_VERCODE)$(IMG_PREFIX_EXTRA)$(BOARD)$(if $(SUBTARGET),-$(SUBTARGET))/$(BOARD)$(if $(SUBTARGET),-$(SUBTARGET))/g' include/image.mk
