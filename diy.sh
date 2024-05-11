@@ -19,4 +19,4 @@ git clone https://github.com/derisamedia/luci-theme-alpha-alk-net.git package/em
 sed -i 's/Os/O2/g' include/target.mk
 sed -i 's/luci-theme-bootstrap/luci-theme-alphaproto/g' feeds/luci/collections/luci/Makefile
 sed -i "27a\echo \"DISTRIB_DESCRIPTION=\'$(TZ=UTC-8 date "+%Y-%m-%d") By:WYH\'\" >> /etc/openwrt_release" package/emortal/default-settings/files/99-default-settings
-sed -i 's/$(VERSION_DIST_SANITIZED)-$(IMG_PREFIX_VERNUM)$(IMG_PREFIX_VERCODE)$(IMG_PREFIX_EXTRA)$(BOARD)$(if $(SUBTARGET),-$(SUBTARGET))/$(shell date +%Y.%m.%d)-$(BOARD)$(if $(SUBTARGET),-$(SUBTARGET))/g' include/image.mk
+sed -i 's/$(VERSION_DIST_SANITIZED)-$(IMG_PREFIX_VERNUM)$(IMG_PREFIX_VERCODE)$(IMG_PREFIX_EXTRA)$(BOARD)$(if $(SUBTARGET),-$(SUBTARGET))/$(shell date %Y-%m-%d %H.%M.%S)-$(BOARD)$(if $(SUBTARGET),-$(SUBTARGET))/g' include/image.mk
